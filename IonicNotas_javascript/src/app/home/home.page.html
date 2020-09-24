@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+     
+      IonicNotas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="ios list-ios hydrated">
+    
+
+    <ion-item *ngFor="let booking of Bookings" class="user-list">
+      <ion-label>
+        <h5>
+          <b>Nombre Estudiante</b>
+        </h5>
+        {{booking.name}}
+        <h5>
+          <b>Nota</b>
+       </h5>
+      {{booking.mobile}}
+      <h5>
+        <b>Nombre Estudiante</b>
+      </h5>
+      {{booking.email}}
+      <h5>
+        <b>Nombre Profesor</b>
+      </h5>
+
+      {{booking.professor}}
+
+      </ion-label>
+
+      <ion-button color="secondary" [routerLink]="['/edit-appointment/', booking.$key]">Editar</ion-button>
+      <ion-button color="danger" (click)="deleteBooking(booking.$key)">Eliminar</ion-button>
+    </ion-item>
+  </ion-list>
